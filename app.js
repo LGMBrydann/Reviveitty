@@ -1,4 +1,3 @@
-```js
 const API_URL = "https://reviveitty-api.yeeter.workers.dev";
 
 const lyrics = document.querySelector("#lyrics");
@@ -145,4 +144,3 @@ generateButton.addEventListener("click", async () => {
 });
 
 updateCaption();
-```
