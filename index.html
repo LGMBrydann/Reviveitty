@@ -1,0 +1,255 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#111111">
+  <meta
+    name="description"
+    content="Create short animated singing lyric videos with Ditty Revival."
+  >
+
+  <title>Ditty Revival</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">DITTY REVIVAL</span>
+
+        <h1>Make something sing.</h1>
+
+        <p>
+          Turn your words into a short animated lyric video.
+        </p>
+      </div>
+
+      <div class="connection">
+        <span id="connectionDot"></span>
+        <span id="connectionText">Checking API...</span>
+      </div>
+    </header>
+
+
+    <section class="creator-grid">
+
+      <!-- CREATOR PANEL -->
+      <div class="panel">
+
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <span>Lyrics</span>
+        </div>
+
+        <label for="lyrics">Your lyrics</label>
+
+        <textarea
+          id="lyrics"
+          maxlength="5000"
+          placeholder="Type something ridiculous..."
+          spellcheck="true"
+        ></textarea>
+
+        <div class="character-count">
+          <span id="characterCount">0</span>/5000
+        </div>
+
+
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <span>Song & voice</span>
+        </div>
+
+        <label for="song">Song</label>
+
+        <select id="song">
+          <option value="neon">Neon Nights — Original</option>
+          <option value="pixel">Pixel Run — Original</option>
+          <option value="goofy">Goofy Groove — Original</option>
+        </select>
+
+
+        <label for="voice">Singing voice</label>
+
+        <select id="voice">
+          <option value="Nova">Nova</option>
+          <option value="Alex">Alex</option>
+          <option value="Mia">Mia</option>
+        </select>
+
+
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <span>Background</span>
+        </div>
+
+        <div class="row">
+
+          <label class="file-button">
+            <span>＋ Add background</span>
+
+            <input
+              id="background"
+              type="file"
+              accept="image/*,video/mp4,video/webm,video/quicktime"
+            >
+          </label>
+
+          <button
+            id="clearBackground"
+            class="secondary"
+            type="button"
+          >
+            Clear
+          </button>
+
+        </div>
+
+
+        <details>
+
+          <summary>
+            <span>Caption settings</span>
+            <span class="summary-arrow">⌄</span>
+          </summary>
+
+          <div class="settings">
+
+            <label for="fontSize">
+              Font size
+            </label>
+
+            <div class="range-row">
+              <input
+                id="fontSize"
+                type="range"
+                min="20"
+                max="72"
+                value="42"
+              >
+
+              <span id="fontSizeValue">42px</span>
+            </div>
+
+
+            <label for="captionPosition">
+              Caption position
+            </label>
+
+            <select id="captionPosition">
+              <option value="center">Center</option>
+              <option value="lower">Lower</option>
+              <option value="upper">Upper</option>
+            </select>
+
+
+            <label for="captionAnimation">
+              Animation
+            </label>
+
+            <select id="captionAnimation">
+              <option value="pop">Pop</option>
+              <option value="fade">Fade</option>
+              <option value="none">None</option>
+            </select>
+
+          </div>
+
+        </details>
+
+
+        <button
+          id="generate"
+          class="generate"
+          type="button"
+        >
+          <span id="generateText">Generate Ditty</span>
+          <span id="generateArrow">→</span>
+        </button>
+
+        <p
+          id="status"
+          class="status"
+          aria-live="polite"
+        ></p>
+
+      </div>
+
+
+      <!-- PREVIEW PANEL -->
+      <div class="preview-panel">
+
+        <div class="preview-header">
+          <span>PREVIEW</span>
+
+          <span id="previewType">SQUARE</span>
+        </div>
+
+
+        <div id="preview" class="preview">
+
+          <video
+            id="bgVideo"
+            muted
+            loop
+            playsinline
+            hidden
+          ></video>
+
+          <img
+            id="bgImage"
+            alt=""
+            hidden
+          >
+
+          <div id="previewFallback">
+            <div class="preview-icon">♪</div>
+            <span>Your preview appears here</span>
+          </div>
+
+          <div
+            id="caption"
+            class="caption-center"
+          >
+            Your lyrics will appear here
+          </div>
+
+          <span class="watermark">
+            REVIVAL
+          </span>
+
+        </div>
+
+
+        <div class="preview-info">
+          <span>
+            Live preview
+          </span>
+
+          <span>
+            1:1
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      <span>DITTY REVIVAL</span>
+      <span>Make something sing.</span>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+```
